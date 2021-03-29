@@ -1,12 +1,13 @@
-package com.sjcet2021;
+package com.virustracker;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ApiApp {
+public class VirusTrackerApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ApiApp.class, args);
+		SpringApplication.run(VirusTrackerApplication.class, args);
 	}
+
 }
