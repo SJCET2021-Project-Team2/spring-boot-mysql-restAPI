@@ -1,20 +1,19 @@
 package com.virustracker.entity;
 
-//import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-//import javax.persistence.Temporal;
-//import javax.persistence.TemporalType;
 
 @Entity
 public class Logs {
 	
 	@Id
-	private Integer UserId;
+	private Integer userId;
 	private Integer premisesId;
-//	@Temporal(TemporalType.TIMESTAMP)
-//	private Date userEntryTimestamp;
+	private LocalDate userEntryDate;
+	private LocalTime userEntryTime;
 //	private Integer premisesName;
 //	private Integer premisesMobile;
 //	private String premisesLocation;
@@ -22,10 +21,10 @@ public class Logs {
 //	private Integer userMobile;
 //	private String userLocation;
 	public Integer getUserId() {
-		return UserId;
+		return userId;
 	}
 	public void setUserId(Integer userId) {
-		UserId = userId;
+		this.userId = userId;
 	}
 	public Integer getPremisesId() {
 		return premisesId;
@@ -33,10 +32,17 @@ public class Logs {
 	public void setPremisesId(Integer premisesId) {
 		this.premisesId = premisesId;
 	}
-//	public Date getUserEntryTimestamp() {
-//		return userEntryTimestamp;
-//	}
-//	public void setUserEntryTimestamp(Date userEntryTimestamp) {
-//		this.userEntryTimestamp = userEntryTimestamp;
-//	}
+	public LocalDate getUserEntryDate() {
+		return userEntryDate;
+	}
+	public void setUserEntryDate(LocalDate userEntryDate) {
+		this.userEntryDate = userEntryDate;
+	}
+	public LocalTime getUserEntryTime() {
+		return userEntryTime;
+	}
+	public void setUserEntryTime(LocalTime localTime) {
+		this.userEntryTime = localTime;
+	}
+	
 }

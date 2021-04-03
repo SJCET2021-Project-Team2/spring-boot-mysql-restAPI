@@ -1,5 +1,6 @@
 package com.virustracker.controller;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,5 +28,5 @@ public class LogsController {
 	public void addUserLogs(@RequestBody Logs logs) {
 		logsService.addUserLogs(logs);
 	}
-	
+
 }
