@@ -11,7 +11,7 @@ import com.virustracker.repository.LogsRepository;
 
 @Service
 public class LogsService {
-
+	
 	@Autowired
 	private LogsRepository logsRepository;
 
@@ -25,8 +25,8 @@ public class LogsService {
 		return logsRepository.findAll();
 	}
 
-	public Iterable<Logs> getExposedUsers() {
-		return logsRepository.findAll();
+	public Iterable<Logs> getExposedUsers(Integer userId) {
+		return logsRepository.findAllById(userId);
 	}
 	
 }

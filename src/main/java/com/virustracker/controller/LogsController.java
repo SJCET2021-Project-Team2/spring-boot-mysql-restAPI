@@ -1,8 +1,8 @@
 package com.virustracker.controller;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -32,9 +32,9 @@ public class LogsController {
 	}
 	
 // 	GET REQ for exposed users
-	@RequestMapping(path = "/users/exposed")
-	public Iterable<Logs> getExposedUsers(){
-		return logsService.getExposedUsers();
+	@RequestMapping(path = "/users/exposed/{userId}")
+	public Iterable<Logs> getExposedUsers(@PathVariable Integer userId){
+		return logsService.getExposedUsers(userId);
 	}
 
 }
