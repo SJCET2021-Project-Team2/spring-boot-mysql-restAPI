@@ -4,22 +4,21 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Logs {
+public class Logs{
 	
 	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;	
 	private Integer userId;
 	private Integer premisesId;
 	private LocalDate userEntryDate;
 	private LocalTime userEntryTime;
-//	private Integer premisesName;
-//	private Integer premisesMobile;
-//	private String premisesLocation;
-//	private String userName;
-//	private Integer userMobile;
-//	private String userLocation;
+
 	public Integer getUserId() {
 		return userId;
 	}
@@ -43,6 +42,6 @@ public class Logs {
 	}
 	public void setUserEntryTime(LocalTime localTime) {
 		this.userEntryTime = localTime;
-	}
-	
+	}	
 }
+

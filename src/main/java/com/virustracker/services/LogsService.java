@@ -24,5 +24,9 @@ public class LogsService {
 	public Iterable<Logs> getAllLogs() {
 		return logsRepository.findAll();
 	}
+
+	public Iterable<Logs> getExposedUsers() {
+		return logsRepository.findAll();
+	}
 	
 }
