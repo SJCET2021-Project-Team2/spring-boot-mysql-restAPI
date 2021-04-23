@@ -25,8 +25,15 @@ public class LogsService {
 		return logsRepository.findAll();
 	}
 
+	public Iterable<Logs> getUserLogs(Integer userId) {
+		return logsRepository.findAllByUserId(userId);
+	}
+	
+	
+	
 	public Iterable<Logs> getExposedUsers(Integer userId) {
-		return logsRepository.findAllById(userId);
+//		return logsRepository.findAllById(userId);
+		return logsRepository.findAll();
 	}
 	
 }
