@@ -1,5 +1,7 @@
 package com.virustracker.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -39,7 +41,7 @@ public class LogsController {
 	
 // 	GET REQ for exposed users
 	@RequestMapping(path = "/users/exposed/{userId}")
-	public Iterable<Logs> getExposedUsers(@PathVariable Integer userId){
+	public List<Logs> getExposedUsers(@PathVariable Integer userId){
 		return logsService.getExposedUsers(userId);
 	}
 

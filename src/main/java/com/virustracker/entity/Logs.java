@@ -13,7 +13,7 @@ public class Logs{
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;	
+    private Long id;
 	private Integer userId;
 	private Integer premisesId;
 	private LocalDate userEntryDate;
