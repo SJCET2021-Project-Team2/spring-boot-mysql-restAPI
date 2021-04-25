@@ -19,13 +19,13 @@ public class LogsController {
 	@Autowired
 	private LogsService logsService;
 	
-// 	GET REQ
+// 	GET REQ for all logs
 	@RequestMapping(path = "/all")
 	public Iterable<Logs> getAllLogs(){
 		return logsService.getAllLogs();
 	}
 	
-//	POST REQ
+//	POST REQ when user scan QR code
 	@RequestMapping(method = RequestMethod.POST, path = "/add")
 	public void addUserLogs(@RequestBody Logs logs) {
 		logsService.addUserLogs(logs);
@@ -33,7 +33,7 @@ public class LogsController {
 	
 // 	GET REQ for logs of virus positive person
 	@RequestMapping(path = "/user/{userId}")
-	public Iterable<Logs> getUser(@PathVariable Integer userId){
+	public Iterable<Logs> getUserLogs(@PathVariable Integer userId){
 		return logsService.getUserLogs(userId);
 	}
 	

@@ -29,11 +29,10 @@ public class LogsService {
 		return logsRepository.findAllByUserId(userId);
 	}
 	
-	
-	
+		
 	public Iterable<Logs> getExposedUsers(Integer userId) {
-//		return logsRepository.findAllById(userId);
-		return logsRepository.findAll();
+		System.out.println(logsRepository.findAllExposedUsersByUserId(userId));
+		return logsRepository.findAllExposedUsersByUserId(userId);
 	}
 	
 }
