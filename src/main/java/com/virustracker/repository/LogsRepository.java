@@ -1,10 +1,11 @@
 package com.virustracker.repository;
 
-import java.util.List;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.Set;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.query.Param;
 
 import com.virustracker.entity.Logs;
 
@@ -12,12 +13,8 @@ import com.virustracker.entity.Logs;
 public interface LogsRepository extends CrudRepository<Logs, Integer>{
 	
 	Iterable<Logs> findAllByUserId(Integer userId);
-
-	@Query("from Logs where user_id != ?1")
-	List<Logs> findAllExposedUsersByUserId(Integer userId);
-
-//	@Query("from Logs where user_entry_date >= '2021-04-21' and user_entry_time >= '22:' and user_id != :userId")
-//	@Query("from Logs where user_entry_date >= '2021-04-21' and user_entry_time >= '22:' and premises_id in(premises_id FROM Logs where user_id = :userId) and user_id != :userId")
-//	public Iterable<Logs> findAllById(@Param("userId") Integer userId);
 	
+	@Query("from Logs where premises_id = ?2 and user_entry_date = ?3 and user_entry_time >= ?4 and user_id != ?1")
+	Set<Logs> findAllExposedUsersByUserId(Integer userId, Integer premisesId, LocalDate userEntryDate, LocalTime userEntryTime);
+
 }

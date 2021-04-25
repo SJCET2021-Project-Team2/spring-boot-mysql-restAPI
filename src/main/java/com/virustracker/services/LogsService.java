@@ -2,9 +2,8 @@ package com.virustracker.services;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,32 +32,16 @@ public class LogsService {
 	}
 	
 		
-	public List<Logs> getExposedUsers(Integer userId) {
+	public Set<Logs> getExposedUsers(Integer userId) {
 		
 		Iterable<Logs> userLogs;
-		List<Integer> premisesId = new ArrayList<>();
-		List<LocalDate> date = new ArrayList<>();
-		List<LocalTime> time = new ArrayList<>();
+		Set<Logs> exposedUserLogs = new LinkedHashSet<Logs>(); 
 		userLogs = logsRepository.findAllByUserId(userId);
 		
 		for( Logs log : userLogs ) {
-			premisesId.add(log.getPremisesId());
-			date.add(log.getUserEntryDate());
-			time.add(log.getUserEntryTime());
+			exposedUserLogs.addAll(logsRepository.findAllExposedUsersByUserId(log.getUserId(), log.getPremisesId(), log.getUserEntryDate(), log.getUserEntryTime()));
 		}
-		
-		System.out.println(premisesId + "  " + date + " " + time);
-
-//		List<Logs> logs = new ArrayList<>();
-//		List<Logs> exposedUser = new ArrayList<>();
-//		LocalDate date;
-//		LocalTime time;
-//		logs = logsRepository.findAllExposedUsersByUserId(userId);
-//		for (Logs log : logs) {
-//			date = log.getUserEntryDate();
-//			time = log.getUserEntryTime();
-//		}
-		return logsRepository.findAllExposedUsersByUserId(userId);
+		System.out.println(exposedUserLogs);
+		return exposedUserLogs;
 	}
-	
 }
