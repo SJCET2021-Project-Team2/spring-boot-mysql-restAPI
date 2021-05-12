@@ -5,14 +5,22 @@ import org.springframework.stereotype.Component;
 @Component
 public class AlertMail {
 
-	private String UserMailId;
-
+	private String userMailId;
+	private String alertMsg = "noice";
+	
 	public String getUserMailId() {
-		return UserMailId;
+		return userMailId;
 	}
-
 	public void setUserMailId(String userMailId) {
-		UserMailId = userMailId;
+		this.userMailId = userMailId;
 	}
+	public String getAlertMsg() {
+		return alertMsg;
+	}
+	public void setAlertMsg(String alertMsg) {
+		this.alertMsg = alertMsg;
+	}
+ 
+	
 	
 }
