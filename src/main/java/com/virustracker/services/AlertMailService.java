@@ -18,10 +18,8 @@ public class AlertMailService {
 	private boolean starttls;
 	@Value("${spring.mail.host}")
 	private String host;
-
 	@Value("${spring.mail.username}")
 	private String username;
-	
 	@Value("${spring.mail.password}")
 	private String password;
 	@Value("${spring.mail.port}")
