@@ -9,7 +9,7 @@ public class Premises {
 	@Id
 	private Integer premisesId;
 	private String premisesName;
-	private Integer premisesMobile;
+	private String premisesMobile;
 	private String premisesMail;
 	private String premisesLocation;
 	public Integer getPremisesId() {
@@ -24,10 +24,10 @@ public class Premises {
 	public void setPremisesName(String premisesName) {
 		this.premisesName = premisesName;
 	}
-	public Integer getPremisesMobile() {
+	public String getPremisesMobile() {
 		return premisesMobile;
 	}
-	public void setPremisesMobile(Integer premisesMobile) {
+	public void setPremisesMobile(String premisesMobile) {
 		this.premisesMobile = premisesMobile;
 	}
 	public String getPremisesMail() {

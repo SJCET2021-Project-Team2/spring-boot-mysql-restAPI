@@ -12,13 +12,16 @@ import com.virustracker.entity.AlertMail;
 
 @Service
 public class AlertMailService {
+	
 
 	@Value("${spring.mail.properties.mail.smtp.starttls.enable}")
 	private boolean starttls;
 	@Value("${spring.mail.host}")
 	private String host;
+
 	@Value("${spring.mail.username}")
 	private String username;
+	
 	@Value("${spring.mail.password}")
 	private String password;
 	@Value("${spring.mail.port}")

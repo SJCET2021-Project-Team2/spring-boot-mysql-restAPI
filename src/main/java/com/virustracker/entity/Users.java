@@ -9,7 +9,7 @@ public class Users {
 	@Id
 	private Integer userId;
 	private String userName;
-	private Integer userMobile;
+	private String userMobile;
 	private String userMail;
 	private String userLocation;
 	public Integer getUserId() {
@@ -24,10 +24,10 @@ public class Users {
 	public void setUserName(String userName) {
 		this.userName = userName;
 	}
-	public Integer getUserMobile() {
+	public String getUserMobile() {
 		return userMobile;
 	}
-	public void setUserMobile(Integer userMobile) {
+	public void setUserMobile(String userMobile) {
 		this.userMobile = userMobile;
 	}
 	public String getUserMail() {
