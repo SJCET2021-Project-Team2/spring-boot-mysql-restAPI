@@ -20,15 +20,15 @@ public class PremisesService {
 		premisesRepository.save(premises);
 	}
 
-	public Premises getPremises(Integer id) {
+	public Premises getPremises(String id) {
 		return premisesRepository.findById(id).orElseGet(null);
 	}
 
-	public void updatePremises(Integer id, Premises premises) {
+	public void updatePremises(String id, Premises premises) {
 		premisesRepository.save(premises);
 	}
 
-	public void deletePremises(Integer id) {
+	public void deletePremises(String id) {
 		premisesRepository.deleteById(id);
 	}
 	

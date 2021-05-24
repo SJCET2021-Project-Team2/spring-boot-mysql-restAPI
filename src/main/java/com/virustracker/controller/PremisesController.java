@@ -27,7 +27,7 @@ public class PremisesController {
 	
 //  GET REQUEST
 	@RequestMapping("/{id}")
-	public Premises getPremises(@PathVariable Integer id) {
+	public Premises getPremises(@PathVariable String id) {
 		return premisesService.getPremises(id);
 	}
 	
@@ -39,13 +39,13 @@ public class PremisesController {
 	
 //	PUT REQUEST
 	@RequestMapping(method = RequestMethod.PUT, path = "/update/{id}")
-	public void updatePremises(@PathVariable Integer id, @RequestBody Premises premises) {
+	public void updatePremises(@PathVariable String id, @RequestBody Premises premises) {
 		premisesService.updatePremises(id, premises);
 	}
 	
 //	DELETE REQUEST
 	@RequestMapping(method = RequestMethod.DELETE, path = "/delete/{id}")
-	public void deletePremises(@PathVariable Integer id) {
+	public void deletePremises(@PathVariable String id) {
 		premisesService.deletePremises(id);
 	}
 }

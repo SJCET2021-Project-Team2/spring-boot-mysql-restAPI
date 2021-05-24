@@ -20,15 +20,15 @@ public class UserService {
 		userRepository.save(user);
 	}
 
-	public Users getUser(Integer id) {
+	public Users getUser(String id) {
 		return userRepository.findById(id).orElseGet(null);
 	}
 
-	public void updateUser(Integer id, Users user) {
+	public void updateUser(String id, Users user) {
 		userRepository.save(user);
 	}
 
-	public void deleteUser(Integer id) {
+	public void deleteUser(String id) {
 		userRepository.deleteById(id);
 	}
 	
