@@ -7,15 +7,15 @@ import javax.persistence.Id;
 public class Users {
 
 	@Id
-	private Integer userId;
+	private String userId;
 	private String userName;
 	private String userMobile;
 	private String userMail;
 	private String userLocation;
-	public Integer getUserId() {
+	public String getUserId() {
 		return userId;
 	}
-	public void setUserId(Integer userId) {
+	public void setUserId(String userId) {
 		this.userId = userId;
 	}
 	public String getUserName() {

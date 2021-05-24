@@ -7,15 +7,15 @@ import javax.persistence.Id;
 public class Premises {
 
 	@Id
-	private Integer premisesId;
+	private String premisesId;
 	private String premisesName;
 	private String premisesMobile;
 	private String premisesMail;
 	private String premisesLocation;
-	public Integer getPremisesId() {
+	public String getPremisesId() {
 		return premisesId;
 	}
-	public void setPremisesId(Integer premisesId) {
+	public void setPremisesId(String premisesId) {
 		this.premisesId = premisesId;
 	}
 	public String getPremisesName() {

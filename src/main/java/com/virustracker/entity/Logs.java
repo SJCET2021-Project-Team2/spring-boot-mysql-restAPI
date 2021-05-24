@@ -14,15 +14,15 @@ public class Logs{
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-	private Integer userId;
+	private String userId;
 	private Integer premisesId;
 	private LocalDate userEntryDate;
 	private LocalTime userEntryTime;
 
-	public Integer getUserId() {
+	public String getUserId() {
 		return userId;
 	}
-	public void setUserId(Integer userId) {
+	public void setUserId(String userId) {
 		this.userId = userId;
 	}
 	public Integer getPremisesId() {
