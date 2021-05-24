@@ -15,7 +15,7 @@ public class Logs{
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 	private String userId;
-	private Integer premisesId;
+	private String premisesId;
 	private LocalDate userEntryDate;
 	private LocalTime userEntryTime;
 
@@ -25,10 +25,10 @@ public class Logs{
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
-	public Integer getPremisesId() {
+	public String getPremisesId() {
 		return premisesId;
 	}
-	public void setPremisesId(Integer premisesId) {
+	public void setPremisesId(String premisesId) {
 		this.premisesId = premisesId;
 	}
 	public LocalDate getUserEntryDate() {
