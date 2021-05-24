@@ -27,12 +27,12 @@ public class LogsService {
 		return logsRepository.findAll();
 	}
 
-	public Iterable<Logs> getUserLogs(Integer userId) {
+	public Iterable<Logs> getUserLogs(String userId) {
 		return logsRepository.findAllByUserId(userId);
 	}
 	
 		
-	public Set<Logs> getExposedUsers(Integer userId) {
+	public Set<Logs> getExposedUsers(String userId) {
 		
 		Iterable<Logs> userLogs;
 		Set<Logs> exposedUserLogs = new LinkedHashSet<Logs>(); 

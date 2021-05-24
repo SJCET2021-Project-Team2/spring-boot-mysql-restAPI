@@ -35,13 +35,13 @@ public class LogsController {
 	
 // 	GET REQ for logs of virus positive person
 	@RequestMapping(path = "/user/{userId}")
-	public Iterable<Logs> getUserLogs(@PathVariable Integer userId){
+	public Iterable<Logs> getUserLogs(@PathVariable String userId){
 		return logsService.getUserLogs(userId);
 	}
 	
 // 	GET REQ for exposed users
 	@RequestMapping(path = "/users/exposed/{userId}")
-	public Set<Logs> getExposedUsers(@PathVariable Integer userId){
+	public Set<Logs> getExposedUsers(@PathVariable String userId){
 		return logsService.getExposedUsers(userId);
 	}
 

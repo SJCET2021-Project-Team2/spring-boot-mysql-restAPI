@@ -12,9 +12,9 @@ import com.virustracker.entity.Logs;
 
 public interface LogsRepository extends CrudRepository<Logs, Integer>{
 	
-	Iterable<Logs> findAllByUserId(Integer userId);
+	Iterable<Logs> findAllByUserId(String userId);
 	
 	@Query("from Logs where premises_id = ?2 and user_entry_date = ?3 and user_entry_time >= ?4 and user_id != ?1")
-	Set<Logs> findAllExposedUsersByUserId(Integer userId, Integer premisesId, LocalDate userEntryDate, LocalTime userEntryTime);
+	Set<Logs> findAllExposedUsersByUserId(String userId, String premisesId, LocalDate userEntryDate, LocalTime userEntryTime);
 
 }
