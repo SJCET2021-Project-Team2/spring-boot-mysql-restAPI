@@ -17,4 +17,7 @@ public interface LogsRepository extends CrudRepository<Logs, Integer>{
 	@Query("from Logs where premises_id = ?2 and user_entry_date = ?3 and user_entry_time >= ?4 and user_id != ?1")
 	Set<Logs> findAllExposedUsersByUserId(String userId, String premisesId, LocalDate userEntryDate, LocalTime userEntryTime);
 
+	@Query("from Logs where user_id = ?1 order by user_entry_date desc")
+	Iterable<Logs> findAllByUserIdByOrderByUserEntryDateDesc(String userId);
+
 }

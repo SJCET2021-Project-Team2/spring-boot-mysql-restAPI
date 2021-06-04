@@ -28,7 +28,8 @@ public class LogsService {
 	}
 
 	public Iterable<Logs> getUserLogs(String userId) {
-		return logsRepository.findAllByUserId(userId);
+		return logsRepository.findAllByUserIdByOrderByUserEntryDateDesc(userId);
+//		return logsRepository.findAllByUserId(userId);
 	}
 	
 		
