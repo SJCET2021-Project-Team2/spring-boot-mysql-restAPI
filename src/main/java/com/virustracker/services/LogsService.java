@@ -2,6 +2,7 @@ package com.virustracker.services;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.ZoneId;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -18,8 +19,8 @@ public class LogsService {
 	private LogsRepository logsRepository;
 
 	public void addUserLogs(Logs logs) {
-		logs.setUserEntryDate(LocalDate.now());
-		logs.setUserEntryTime(LocalTime.now());
+		logs.setUserEntryDate(LocalDate.now(ZoneId.of("GMT+05:30")));
+		logs.setUserEntryTime(LocalTime.now(ZoneId.of("GMT+05:30")));
 		logsRepository.save(logs);
 	}
 
